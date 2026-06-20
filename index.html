@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora Fortuna - Catálogo Mayorista de Loterías</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <nav class="bg-slate-900/95 backdrop-blur-md text-white fixed w-full z-50 shadow-xl border-b border-purple-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center space-x-3 group">
+                    <div
+                        class="bg-gradient-to-tr from-amber-400 to-emerald-400 p-1 rounded-2xl w-12 h-12 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                        <div
+                            class="bg-slate-900 rounded-xl w-full h-full flex items-center justify-center overflow-hidden">
+                            <img class="w-8 h-8 object-contain" src="https://via.placeholder.com/150?text=Logo"
+                                alt="Logo Fortuna">
+                        </div>
+                    </div>
+                    <span
+                        class="font-extrabold text-xl tracking-wider bg-gradient-to-r from-amber-400 via-emerald-400 to-emerald-300 bg-clip-text text-transparent">LOTERÍAS
+                        FORTUNA</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 font-semibold tracking-wide">
+                    <a href="#inicio" class="text-amber-400 hover:text-emerald-400 transition">Inicio</a>
+                    <a href="#catalogo" class="hover:text-amber-400 transition">Catálogo</a>
+                    <a href="#mayoreo" class="hover:text-amber-400 transition">Mayoreo VIP</a>
+                    <a href="#beneficios" class="hover:text-amber-400 transition">Garantías</a>
+                    <a href="#contacto"
+                        class="bg-gradient-to-r from-emerald-500 to-teal-600 px-4 py-2 rounded-xl text-sm font-bold shadow-md hover:brightness-110 transition">Contacto
+                        y Redes</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="btn-menu" class="text-white hover:text-amber-400 focus:outline-none text-2xl p-2">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-movil" class="hidden md:hidden bg-slate-950 border-t border-purple-900/50">
+            <div class="px-4 py-6 space-y-3 text-center text-lg font-medium">
+                <a href="#inicio"
+                    class="block py-2 rounded-xl hover:bg-purple-900/30 hover:text-amber-400 transition">Inicio</a>
+                <a href="#catalogo"
+                    class="block py-2 rounded-xl hover:bg-purple-900/30 hover:text-amber-400 transition">Catálogo</a>
+                <a href="#mayoreo"
+                    class="block py-2 rounded-xl hover:bg-purple-900/30 hover:text-amber-400 transition">Mayoreo</a>
+                <a href="#beneficios"
+                    class="block py-2 rounded-xl hover:bg-purple-900/30 hover:text-amber-400 transition">Garantías</a>
+                <a href="#contacto"
+                    class="block py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 font-bold text-white shadow-md">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio"
+        class="relative pt-32 pb-24 md:pt-48 md:pb-40 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white text-center px-4 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute bottom-1/4 right-1/4 w-92 h-92 bg-purple-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10 animate-fade-in-up">
+            <span
+                class="bg-purple-900/60 text-emerald-400 border border-purple-500/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-6 shadow-inner">
+                <i class="fa-solid fa-bolt mr-2 animate-pulse"></i>Distribuidor Mayorista Autorizado
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight">
+                Multiplica tus Ganancias con <span
+                    class="bg-gradient-to-r from-amber-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent">Nuestras
+                    Loterías</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light">
+                Surtimos de manera inmediata a cadenas de comercios, quioscos y redes independientes. Explora nuestros
+                42 juegos disponibles.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#catalogo"
+                    class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-amber-500/20 hover:scale-105 active:scale-95 transition inline-block text-center">
+                    Explorar Catálogo de Juegos
+                </a>
+                <a href="#mayoreo"
+                    class="w-full sm:w-auto bg-slate-900 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl hover:bg-slate-800 transition inline-block text-center">
+                    Condiciones de Mayoreo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 reveal">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4">Catálogo de Sorteos Disponibles</h2>
+            <div class="h-1.5 w-24 bg-gradient-to-r from-amber-400 to-emerald-500 mx-auto rounded-full mb-6"></div>
+            <p class="text-slate-600 max-w-xl mx-auto font-medium">Haz clic en "Ver" para ampliar el diseño del boleto o
+                en "Pedir" para solicitar tus piezas.</p>
+        </div>
+
+        <div id="contenedor-loteria" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        </div>
+    </section>
+
+    <section id="mayoreo" class="py-20 px-4 bg-slate-900 text-white relative overflow-hidden reveal">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-b from-purple-600/10 to-transparent rounded-full blur-2xl pointer-events-none">
+        </div>
+        <div
+            class="max-w-6xl mx-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 rounded-3xl shadow-2xl border border-purple-500/20 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            <div class="p-8 sm:p-12 lg:p-16 lg:col-span-7 flex flex-col justify-center">
+                <span
+                    class="text-xs font-black uppercase tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3 py-1 rounded-md w-max mb-4">Plan
+                    de Expansión Comercial</span>
+                <h2 class="text-3xl sm:text-4xl font-black mb-6 leading-tight">¿Compras a Gran Escala?<br><span
+                        class="text-emerald-400">Descubre el Canal Mayorista</span></h2>
+                <p class="text-slate-300 mb-8 font-light leading-relaxed">Optimizamos la rentabilidad de tu negocio
+                    mediante esquemas de distribución escalonados.</p>
+                <a href="https://wa.me/521234567890?text=Hola.%20Solicito%20atención%20comercial%20personalizada%20para%20el%20esquema%20de%20compras%20al%20mayoreo%20de%20loterías."
+                    target="_blank"
+                    class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:brightness-110 text-white font-extrabold text-center py-4 px-8 rounded-xl transition shadow-xl transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-headset mr-2"></i> Contactar Ejecutivo de Ventas
+                </a>
+            </div>
+            <div class="lg:col-span-5 bg-cover bg-center min-h-[300px] lg:min-h-full relative hidden sm:block"
+                style="background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80');">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950 via-transparent to-transparent">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight">Garantía Operativa y Legalidad
+                    Comercial</h2>
+                <p class="text-slate-600 leading-relaxed font-light">Nos tomamos muy en serio la seguridad de tu
+                    inversión.</p>
+            </div>
+            <div
+                class="bg-gradient-to-br from-slate-900 to-purple-950 p-8 rounded-3xl shadow-xl border border-purple-900/40 text-white">
+                <h3 class="text-2xl font-black mb-6 flex items-center"><i
+                        class="fa-solid fa-circle-question text-amber-400 mr-3"></i>Respuestas Inmediatas</h3>
+                <p class="text-slate-300 font-light leading-relaxed">Manejamos bloques base por paquete de sorteo para
+                    asegurar comisiones atractivas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-slate-950 text-slate-400 py-16 px-4 border-t-2 border-purple-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <h3
+                    class="text-white font-black text-xl tracking-wider mb-4 bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
+                    Loterías Fortuna</h3>
+                <p class="text-sm leading-relaxed font-light">Distribución corporativa de sorteos de azar con validez
+                    oficial.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base uppercase tracking-wider mb-4">Navegación</h3>
+                <div class="grid grid-cols-2 gap-2 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-emerald-400 transition">Inicio</a>
+                    <a href="#catalogo" class="hover:text-emerald-400 transition">Catálogo</a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base uppercase tracking-wider mb-4">Canales</h3>
+                <div class="flex space-x-4 text-3xl">
+                    <a href="#" class="text-slate-500 hover:text-emerald-400 transition"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-emerald-400 transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/521234567890?text=Hola,%20buenos%20días.%20Me%20interesa%20obtener%20asesoría%20sobre%20el%20catálogo%20de%20loterías."
+        target="_blank"
+        class="fixed bottom-6 right-6 bg-emerald-500 text-white p-4 rounded-2xl shadow-2xl z-50 group hover:scale-110 transition-all duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <div id="modal-imagen"
+        class="fixed inset-0 bg-slate-950/90 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300">
+        <button onclick="cerrarImagen()"
+            class="absolute top-6 right-6 text-white hover:text-amber-400 text-4xl p-2 transition focus:outline-none"
+            title="Cerrar vista">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl border border-purple-500/20 bg-slate-900"
+            onclick="event.stopPropagation()">
+            <img id="imagen-modal-target" class="w-full h-full object-contain max-h-[85vh]" src=""
+                alt="Vista Previa de Lotería">
+        </div>
+    </div>
+
+
+    <script>
+        // Menú Móvil
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMovil = document.getElementById('menu-movil');
+        btnMenu.addEventListener('click', () => menuMovil.classList.toggle('hidden'));
+
+        // ARRAY DE LOTERÍAS (Configura aquí tus nombres, precios e imágenes)
+        const loterias = [
+            { id: 1, nombre: "Sorteo Mayor", precio: "$50.00 MXN", imagen: "img/loteria1.jpeg" },
+            { id: 2, nombre: "Sorteo Superior", precio: "$60.00 MXN", imagen: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&q=80" },
+            { id: 3, nombre: "Sorteo Magno", precio: "$120.00 MXN", imagen: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" },
+            { id: 4, nombre: "Sorteo Especial", precio: "$80.00 MXN", imagen: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=600&q=80" },
+            { id: 5, nombre: "Gana Gato", precio: "$15.00 MXN", imagen: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=600&q=80" },
+            { id: 6, nombre: "Melate Retro", precio: "$30.00 MXN", imagen: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80" },
+            // Agrega o edita del 7 al 42 según tus requerimientos...
+            { id: 7, nombre: "Lotería Tipo 7", precio: "$45.00 MXN", imagen: "https://via.placeholder.com/600x450?text=Sorteo+7" },
+            { id: 8, nombre: "Lotería Tipo 8", precio: "$45.00 MXN", imagen: "https://via.placeholder.com/600x450?text=Sorteo+8" }
+        ];
+
+        // RENDERIZADO DEL CATÁLOGO
+        const contenedor = document.getElementById('contenedor-loteria');
+
+        loterias.forEach(loteria => {
+            const msgWa = encodeURIComponent(`Hola, me interesa el sorteo: "${loteria.nombre}". ¿Tienen disponibilidad?`);
+
+            const card = `
+                <div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between glow-effect group">
+                    <div class="p-5">
+                        <div class="w-full h-44 bg-slate-900 rounded-xl overflow-hidden mb-4 border border-purple-900/10 relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${loteria.imagen}" alt="${loteria.nombre}">
+                            <div class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm text-[10px] font-black text-amber-400 px-2 py-0.5 rounded-md border border-amber-400/20">
+                                Oficial
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-black text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md uppercase tracking-wider">Disponible</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">${loteria.nombre}</h3>
+                    </div>
+                    
+                    <div class="bg-slate-50/80 px-4 py-4 border-t border-slate-100 flex flex-col space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Precio Unitario</span>
+                            <span class="text-base font-black text-slate-900 tracking-tight">${loteria.precio}</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="verImagen('${loteria.imagen}')" 
+                                    class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 px-3 rounded-xl transition flex items-center justify-center space-x-1">
+                                <i class="fa-solid fa-eye text-slate-500"></i>
+                                <span>Ver</span>
+                            </button>
+                            <a href="https://wa.me/521234567890?text=${msgWa}" target="_blank" 
+                               class="text-xs bg-slate-900 hover:bg-purple-900 text-white font-bold py-2.5 px-3 rounded-xl transition shadow-md flex items-center justify-center space-x-1">
+                               <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                               <span>Pedir</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            contenedor.innerHTML += card;
+        });
+
+        // ========================================== -->
+        // NUEVAS FUNCIONES: LÓGICA DEL MODAL DE IMAGEN
+        // ========================================== -->
+        const modal = document.getElementById('modal-imagen');
+        const imagenModalTarget = document.getElementById('imagen-modal-target');
+
+        // Función para abrir la imagen seleccionada
+        function verImagen(url) {
+            imagenModalTarget.src = url; // Asigna la ruta de la imagen seleccionada al modal
+            modal.classList.remove('hidden'); // Muestra el modal quitando la clase hidden
+            document.body.classList.add('overflow-hidden'); // Bloquea el scroll del fondo por estética
+        }
+
+        // Función para cerrar el modal
+        function cerrarImagen() {
+            modal.classList.add('hidden'); // Oculta el modal de nuevo
+            imagenModalTarget.src = ""; // Limpia la ruta por rendimiento
+            document.body.classList.remove('overflow-hidden'); // Libera el scroll
+        }
+
+        // Cerrar también si el usuario hace clic fuera de la foto (en el fondo oscuro)
+        modal.addEventListener('click', cerrarImagen);
+
+        // Animación Scroll
+        const seccionesReveal = document.querySelectorAll('.reveal');
+        const scrollObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        seccionesReveal.forEach(s => scrollObserver.observe(s));
+    </script>
+</body>
+
+</html>
